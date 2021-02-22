@@ -10,18 +10,29 @@ function City ( name, minOfCustomers,maxOfCustomers, averAge ) {
   this.noOfCookies =[];
   this.noOfCustomersHourly=[];
   this.toTal=0;
+  this.toTalHourly=[];
 }
-const tableElement=document.getElementById( 'table' );
 
-City.prototype.getNN= function(){
-  const tr1Element=document.createElement( 'tr' );
-  tableElement.appendChild( tr1Element );
+const parentElement = document.getElementById( 'Sales' );
+const tableElement=document.createElement( 'table' );
+parentElement.appendChild( tableElement );
+const tr1Element=document.createElement( 'tr' );
+tableElement.appendChild( tr1Element );
+
+City.prototype.getHeading= function(){
+
   for( let i = 0; i < workHours.length; i++ ) {
     const th1Element=document.createElement( 'th' );
     tr1Element.appendChild( th1Element );
-    tr1Element.textContent = `${workHours[i]}`;
+    th1Element.textContent = `${workHours[i]}`;
   }
+  //th1Element.textContent = `${workHours[i]}`;
 };
+
+
+
+
+
 
 City.prototype.getCookies= function() {
   for( let j=0; j<workHours.length; j++ ){
@@ -32,28 +43,33 @@ City.prototype.getCookies= function() {
     this.toTal+=cookiesNo;
     this.noOfCustomersHourly.push( hourlyCustomers );
   }
+  this.toTalHourly.push( this.toTal );
 };
 
 City.prototype.render=function () {
-  const parentElement = document.getElementById( 'Sales' );
+  // const parentElement = document.getElementById( 'Sales' );
 
   const articleElement = document.createElement( 'article' );
   parentElement.appendChild( articleElement );
 
-  const h2Element = document.createElement( 'h2' );
-  articleElement.appendChild( h2Element );
 
 
-  const ulElement = document.createElement( 'ul' );
-  articleElement.appendChild( ulElement );
+  const tr2Element=document.createElement( 'tr' );
+  tableElement.appendChild( tr2Element );
+  for( let i = 0; i < workHours.length; i++ ) {
+    const td1Element=document.createElement( 'td' );
+    tr2Element.appendChild( td1Element );
+    td1Element.textContent = `${this.noOfCustomersHourly[i]}`;
+  }
 
-  const tableElement=document.createElement( 'table' );
-  articleElement.appendChild( tableElement );
+  City.prototype.getTotals= function(){
 
-  // const tr1Element=document.createElement( 'tr' );
-  // tableElement.appendChild( tr1Element );
-
-
+    for( let i = 0; i < workHours.length; i++ ) {
+      const th1Element=document.createElement( 'th' );
+      tr1Element.appendChild( th1Element );
+      th1Element.textContent = `${workHours[i]}`;
+    }
+  };
 
 
 
@@ -65,9 +81,9 @@ City.prototype.render=function () {
   //   textContent = `${workHours[i]}: ${this.noOfCookies[i]} cookies`;
 
   // }
-  const li2Element = document.createElement( 'li' );
-  ulElement.appendChild( li2Element );
-  li2Element.textContent = `Total: ${this.toTal} cookies`;
+  // const li2Element = document.createElement( 'li' );
+  // ulElement.appendChild( li2Element );
+  // li2Element.textContent = `Total: ${this.toTal} cookies`;
 
 
 
@@ -79,8 +95,9 @@ City.prototype.render=function () {
 
 const seattle = new City( 'Seattle', 23, 65, 6.3 );
 seattle.getCookies();
-seattle.getNN();
+seattle.getHeading();
 seattle.render();
+seattle.getTotals();
 console.log( seattle );
 
 
