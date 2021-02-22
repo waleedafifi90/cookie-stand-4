@@ -10,11 +10,13 @@ const seattle = {
   toTal:0,
   getCookies: function() {
     for( let j=0; j<workHours.length; j++ ){
-      let cookiesNo=Math.ceil( ( randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers ) )*this.averAge );
+      let hourlyCustomers= randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers );
+      let cookiesNo=Math.ceil( ( hourlyCustomers )*this.averAge );
       console.log( cookiesNo );
       this.noOfCookies.push( cookiesNo );
       this.toTal+=cookiesNo;
-
+      this.noOfCustomersHourly.push( hourlyCustomers );
+      
     }
   },
 
@@ -65,10 +67,12 @@ const tokyo = {
   toTal:0,
   getCookies: function() {
     for( let j=0; j<workHours.length; j++ ){
-      let cookiesNo=Math.ceil( ( randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers ) )*this.averAge );
+      let hourlyCustomers= randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers );
+      let cookiesNo=Math.ceil( ( hourlyCustomers )*this.averAge );
       console.log( cookiesNo );
       this.noOfCookies.push( cookiesNo );
       this.toTal+=cookiesNo;
+      this.noOfCustomersHourly.push( hourlyCustomers );
 
     }
   },
@@ -120,10 +124,12 @@ const dubai = {
   toTal:0,
   getCookies: function() {
     for( let j=0; j<workHours.length; j++ ){
-      let cookiesNo=Math.ceil( ( randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers ) )*this.averAge );
+      let hourlyCustomers= randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers );
+      let cookiesNo=Math.ceil( ( hourlyCustomers )*this.averAge );
       console.log( cookiesNo );
       this.noOfCookies.push( cookiesNo );
       this.toTal+=cookiesNo;
+      this.noOfCustomersHourly.push( hourlyCustomers );
 
     }
   },
@@ -175,11 +181,12 @@ const Paris = {
   toTal:0,
   getCookies: function() {
     for( let j=0; j<workHours.length; j++ ){
-      let cookiesNo=Math.ceil( ( randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers ) )*this.averAge );
+      let hourlyCustomers= randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers );
+      let cookiesNo=Math.ceil( ( hourlyCustomers )*this.averAge );
       console.log( cookiesNo );
       this.noOfCookies.push( cookiesNo );
       this.toTal+=cookiesNo;
-
+      this.noOfCustomersHourly.push( hourlyCustomers );
     }
   },
 
@@ -231,13 +238,18 @@ const Lima = {
   toTal:0,
   getCookies: function() {
     for( let j=0; j<workHours.length; j++ ){
-      let cookiesNo=Math.ceil( ( randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers ) )*this.averAge );
+      let hourlyCustomers= randomNoOfCustomers( this.minOfCustomers, this.maxOfCustomers );
+      let cookiesNo=Math.ceil( ( hourlyCustomers )*this.averAge );
       console.log( cookiesNo );
       this.noOfCookies.push( cookiesNo );
       this.toTal+=cookiesNo;
-
+      this.noOfCustomersHourly.push( hourlyCustomers );
+  
     }
+  
+
   },
+
 
 
   render: function () {
