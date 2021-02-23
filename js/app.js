@@ -23,7 +23,7 @@ tableElement.appendChild( tr1Element );
 City.prototype.getHeading= function(){
   const th1Element=document.createElement( 'th' );
   tr1Element.appendChild( th1Element );
-  th1Element.textContent = ``;
+  th1Element.textContent = 'City';
   for( let i = 0; i < workHours.length; i++ ) {
     const th2Element=document.createElement( 'th' );
     tr1Element.appendChild( th2Element );
@@ -32,7 +32,7 @@ City.prototype.getHeading= function(){
   }
   const th16Element=document.createElement( 'th' );
   tr1Element.appendChild( th16Element );
-  th16Element.textContent = `Daily Location Total`;
+  th16Element.textContent = 'Daily Location Total';
 
 };
 
@@ -81,13 +81,15 @@ City.prototype.getTotals= function(){
   tableElement.appendChild( tr8Element );
   const th1Element=document.createElement( 'th' );
   tr8Element.appendChild( th1Element );
-  th1Element.textContent = `Totals`;
+  th1Element.textContent = 'Totals';
   for( let i = 0; i < this.noOfCustomersHourly.length; i++ ) {
     const td2Element=document.createElement( 'td' );
     tr8Element.appendChild( td2Element );
-    td2Element.textContent = `${seattle.noOfCustomersHourly[i]+Tokyo.noOfCustomersHourly[i]+Dubai.noOfCustomersHourly[i]+Paris.noOfCustomersHourly[i]+Lima.noOfCustomersHourly[i]}`;
+    td2Element.textContent = `${seattle.noOfCustomersHourly[i]+tokyo.noOfCustomersHourly[i]+dubai.noOfCustomersHourly[i]+Paris.noOfCustomersHourly[i]+Lima.noOfCustomersHourly[i]}`;
   }
-
+  const td15Element=document.createElement( 'td' );
+  tr8Element.appendChild( td15Element );
+  td15Element.textContent = `${seattle.toTalHourly+ tokyo.toTalHourly+ dubai.toTalHourly}`;
 };
 
 
@@ -119,13 +121,13 @@ seattle.render();
 console.log( seattle );
 
 
-const Tokyo = new City( 'Tokyo', 3, 24, 1.2 );
-Tokyo.getCookies();
-Tokyo.render();
+const tokyo = new City( 'tokyo', 3, 24, 1.2 );
+tokyo.getCookies();
+tokyo.render();
 
-const Dubai = new City( 'Dubai', 11, 38, 3.7 );
-Dubai.getCookies();
-Dubai.render();
+const dubai = new City( 'Dubai', 11, 38, 3.7 );
+dubai.getCookies();
+dubai.render();
 // Create Element
 
 const Paris = new City( 'Paris', 20, 38, 2.3 );
