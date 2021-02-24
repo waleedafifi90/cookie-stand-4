@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -14,6 +15,20 @@
       <a class="home" href="./index.html">Home </a>
     </header> 
     <main>
+      <form id="addNewCity">
+<fieldset>
+  <legend> Add new City</legend>
+  <label for="cityName">City Name</label>
+  <input type="text" name="city_name" id="cityName">
+  <label for="minOfCustomers">min.Number of Customers</label>
+  <input type="number" name="minimum_number_of_customers" id="minOfCustomers">
+  <label for="maxOfCustomers">max.Number of Customers</label>
+  <input type="number" name="maximum_number_of_customers" id="maxOfCustomers">
+  <label for="averAge">avg.Number of Customers</label>
+  <input type="number" name="average_number_of_customers" id="averAge">
+  <button type="submit">Save</button>
+</fieldset>
+      </form>
         <div id="Sales">
             <!-- generate this from js: -->
             <!-- <article>
