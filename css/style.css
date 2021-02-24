@@ -1,5 +1,16 @@
+*{
+  box-sizing: border-box;
+  font-family:cursive;
+ 
+}
 
+body{
+  width: 960px;
+  margin: auto;
+  line-height: 1.5;
+}
 h1{
+  color: indianred;
   text-align: center;
   font-family:cursive;
 }
@@ -14,16 +25,67 @@ h1{
 
 }
 
+#Sales table tr{
+  background-color:grey; 
+  color: #fff;
+  border-radius: inherit;
+  text-align: center;
+
+}
+
+
 #Sales table tr:nth-child(1)  {
-    background-color:cornflowerblue;
+    background-color:indianred;
     padding-top: 12px;
   padding-bottom: 12px;
   
 }
 
 #Sales table tr:nth-child(7)  {
-  background-color:cornflowerblue;
+  background-color:indianred;
   padding-top: 12px;
 padding-bottom: 12px;
+
+}
+
+.locations {
+  color: indianred;
+  clear: both;
+}
+ .intro{
+   width: 50%;
+   float: left;
+  
+ }
+ img{
+   width: 100%;
+   padding: 20px;
+   float: left;
+ }
+ .sales{
+text-decoration:none;
+float: right;
+color: indianred;
+font-size: x-large;
+
+ }
+
+ footer{
+  clear: both;
+  padding: 20px;
+  text-align: center;
+  background: black;
+  color: #fff;
+  text-transform: capitalize;
+  height: auto;
+ }
+ #head-home{
+   color: indianred;
+ }
+
+ .home{
+  text-decoration:none;
+font-size: x-large;
+float: left;
 
 }
